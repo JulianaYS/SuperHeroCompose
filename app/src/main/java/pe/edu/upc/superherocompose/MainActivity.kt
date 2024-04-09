@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import pe.edu.upc.superherocompose.ui.home.Home
 import pe.edu.upc.superherocompose.ui.theme.SuperHeroComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,3 +30,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+/*avanzar la parte de lazyColumn, completa el diseno, colocar image, nombre, nombre real
+* y todo, con barra de busqueda y corazon
+* solo diseno a mas
+* */
