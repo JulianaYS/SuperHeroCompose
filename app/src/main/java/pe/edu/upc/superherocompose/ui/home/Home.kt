@@ -114,3 +114,5 @@ fun HeroSearch(heroes: MutableState<List<Hero>>) {
 /*
 * mapeat datos
 * poner el acceso a internet*/
+
+/*hacer q cambie el color del corazon al presionar*/
