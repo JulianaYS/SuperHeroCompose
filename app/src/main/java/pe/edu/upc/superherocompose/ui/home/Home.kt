@@ -74,5 +74,4 @@ fun HeroImage(url: String){
 }
 @Composable
 fun HeroSearch() {
-
 }
