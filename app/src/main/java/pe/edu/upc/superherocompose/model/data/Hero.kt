@@ -1,6 +1,9 @@
 package pe.edu.upc.superherocompose.model.data
 
+import com.google.gson.annotations.SerializedName
+
 data class HeroWrapper(
+    @SerializedName("results")  /*mapear el endpoint*/
     val heroes: List<Hero>
 )
 
@@ -11,6 +14,7 @@ data class Hero (
     )
 
 data class Biography(
+    @SerializedName("full-name")
     val fullName: String
 )
 

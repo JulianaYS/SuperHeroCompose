@@ -35,3 +35,11 @@ class MainActivity : ComponentActivity() {
 * y todo, con barra de busqueda y corazon
 * solo diseno a mas
 * */
+
+
+/* BIBLIOTECAS
+* retrofit
+* converter-gson
+* landscapist-glide
+* (room)
+* */
