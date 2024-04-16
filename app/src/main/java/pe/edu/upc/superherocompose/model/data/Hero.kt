@@ -8,6 +8,7 @@ data class HeroWrapper(
 )
 
 data class Hero (
+    val id: String
     val name : String,
     val biography: Biography,
     val image: Image,
@@ -19,6 +20,9 @@ data class PowerState(
     val intelligence: String,
     val strength: String,
     val speed: String,
+    val durability:String,
+    val power: String,
+    val combat: String
 )
 
 data class Biography(

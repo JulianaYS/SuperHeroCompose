@@ -47,23 +47,26 @@ fun HeroesSearch(){
 }
 
 @Composable
-fun HeroList(heroes: MutableState<List<Hero>>) {
+fun HeroList(heroes: MutableState<List<Hero>>, selectHero: (String)->Unit) {
 
     LazyColumn {
         items(heroes.value){hero->
-            HeroItem(hero)
+            HeroItem(hero, selectHero)
         }
     }
 }
 @Composable
-fun HeroItem(hero: Hero){
+fun HeroItem(hero: Hero, selectHero: (String)->Unit){
     val like= remember {
         mutableStateOf(false)
     }
 
     Card (modifier = Modifier
         .fillMaxWidth()
-        .padding(8.dp)){
+        .padding(8.dp),
+        onClick = {
+            selectHero()
+        } ){
         Row {
             HeroImage(hero.image.url)
             Column (modifier = Modifier
@@ -81,12 +84,12 @@ fun HeroItem(hero: Hero){
 
 }
 @Composable
-fun HeroImage(url: String){
+fun HeroImage(url: String, size: Dp){
     GlideImage(imageModel = { url }, modifier = Modifier.size(92.dp))
 
 }
 @Composable
-fun HeroSearch(heroes: MutableState<List<Hero>>) {
+fun HeroSearch(selectHero: (String)->Unit) {
     val search = remember {
         mutableStateOf("")
     }
