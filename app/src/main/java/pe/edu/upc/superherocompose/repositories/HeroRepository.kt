@@ -30,9 +30,32 @@ class HeroRepository(private val heroService: HeroService=HeroServiceFactory.get
 
         })
     }
+
+    /*callback: funcion como parametro*/
+    fun getHeroById(id:String, callback:(Hero)->Unit){
+        val getHeroById = heroService.getHeroById(id=id)
+        getHeroById.enqueue(object : Callback<Hero> {
+            override fun onResponse(call: Call<Hero>, response: Response<Hero>) {
+                if(response.isSuccessful){
+                    response.body() as Hero
+                    callback(response.body() as Hero)
+                }
+            }
+
+            override fun onFailure(call: Call<Hero>, t: Throwable) {
+                t.message?.let {
+                    Log.d("HeroRepository", it)
+                }
+            }
+
+        })
+    }
 }
 
 /*
 * dependenci por contructos
 * por atributos
 * por etodos*/
+
+/*atender todas las solicitudes de datos: el repository
+* fuente de datos unica*/
